@@ -480,7 +480,7 @@ export default function SimulatorPage() {
             <div style={S.emptyState}>
               <div style={{ fontSize: 52, marginBottom: 16 }}>🔌</div>
               <p style={{ fontSize: 16, marginBottom: 8 }}>Drag components from the left panel</p>
-              <p style={{ fontSize: 12, color: 'var(--text3)', fontFamily: 'JetBrains Mono, monospace' }}>
+              <p style={{ fontSize: 12, color: 'var(--text3)', fontFamily: 'Fira Code, monospace' }}>
                 Arduino Uno · LED · Resistor · Button · Servo · LCD
               </p>
             </div>
@@ -567,7 +567,7 @@ export default function SimulatorPage() {
                           background: 'var(--bg2)', border: '1px solid var(--border)',
                           color: 'var(--accent)', padding: '2px 6px', borderRadius: 4,
                           fontSize: 10, whiteSpace: 'nowrap', zIndex: 100,
-                          fontFamily: 'JetBrains Mono, monospace',
+                          fontFamily: 'Fira Code, monospace',
                           pointerEvents: 'none',
                         }}>
                           {pin.label}
@@ -582,7 +582,7 @@ export default function SimulatorPage() {
                   position: 'absolute', bottom: -18, left: '50%',
                   transform: 'translateX(-50%)',
                   fontSize: 10, color: hasError ? 'var(--red)' : 'var(--text3)',
-                  whiteSpace: 'nowrap', fontFamily: 'JetBrains Mono, monospace',
+                  whiteSpace: 'nowrap', fontFamily: 'Fira Code, monospace',
                   pointerEvents: 'none',
                 }}>
                   {comp.label}
@@ -621,7 +621,7 @@ export default function SimulatorPage() {
               {wires.map(w => (
                 <div key={w.id} style={S.wireItem}>
                   <div style={{ width: 10, height: 10, borderRadius: '50%', background: w.color, flexShrink: 0 }} />
-                  <span style={{ flex: 1, fontSize: 10, color: 'var(--text2)', fontFamily: 'JetBrains Mono, monospace', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                  <span style={{ flex: 1, fontSize: 10, color: 'var(--text2)', fontFamily: 'Fira Code, monospace', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     {w.from} → {w.to}
                   </span>
                   <button style={S.wireDelete} onClick={() => deleteWire(w.id)}>✕</button>
@@ -661,7 +661,7 @@ export default function SimulatorPage() {
             {codeTab === 'serial' && (
               <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <div style={S.serialOutput}>
-                  <span style={{ color: 'var(--green)', display: 'block', fontFamily: 'JetBrains Mono, monospace', fontSize: 12 }}>
+                  <span style={{ color: 'var(--green)', display: 'block', fontFamily: 'Fira Code, monospace', fontSize: 12 }}>
                     [Serial Monitor Ready]
                   </span>
                 </div>
@@ -692,7 +692,7 @@ function Btn({ children, onClick, color, title }) {
         border: `1px solid ${color || 'var(--border)'}`,
         color: color ? (hov ? '#fff' : color) : 'var(--text)',
         padding: '7px 14px', borderRadius: 8,
-        fontFamily: 'Space Grotesk, sans-serif', fontSize: 13,
+        fontFamily: 'Outfit, sans-serif', fontSize: 13,
         cursor: 'pointer', transition: 'all .15s', whiteSpace: 'nowrap',
         fontWeight: color ? 700 : 500,
       }}
@@ -704,7 +704,7 @@ function Btn({ children, onClick, color, title }) {
 
 // ─── Styles (Refactored to map strictly to CSS variables) ───────────────────────
 const S = {
-  page:    { display:'flex', flexDirection:'column', height:'100vh', overflow:'hidden', background:'var(--bg)', fontFamily:"'Space Grotesk',sans-serif", color:'var(--text)' },
+  page:    { display:'flex', flexDirection:'column', height:'100vh', overflow:'hidden', background:'var(--bg)', fontFamily:"'Outfit',sans-serif", color:'var(--text)' },
   bar:     { display:'flex', alignItems:'center', gap:10, padding:'10px 16px', background:'var(--bg2)', borderBottom:'1px solid var(--border)', flexShrink:0, flexWrap:'wrap' },
   logo:    { background:'none', border:'none', color:'var(--accent)', fontSize:16, fontWeight:700, cursor:'pointer', fontFamily:'inherit', display:'flex', alignItems:'center', gap:6 },
   barCenter: { display:'flex', alignItems:'center', gap:8, flex:1, flexWrap:'wrap' },
@@ -745,7 +745,7 @@ const S = {
   codeTabs:     { display:'flex', borderBottom:'1px solid var(--border)', flexShrink:0 },
   codeTab:      { flex:1, padding:'10px 4px', background:'none', border:'none', color:'var(--text3)', fontFamily:'inherit', fontSize:12, cursor:'pointer', borderBottom:'2px solid transparent', transition:'all .15s' },
   codeTabActive:{ color:'var(--accent)', borderBottomColor:'var(--accent)' },
-  codeEditor:   { flex:1, background:'var(--bg)', color:'var(--text)', border:'none', outline:'none', padding:14, fontFamily:"'JetBrains Mono',monospace", fontSize:12, lineHeight:1.7, resize:'none' },
+  codeEditor:   { flex:1, background:'var(--bg)', color:'var(--text)', border:'none', outline:'none', padding:14, fontFamily:"'Fira Code',monospace", fontSize:12, lineHeight:1.7, resize:'none' },
   codePlaceholder: { flex:1, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', color:'var(--text3)', gap:8 },
   serialOutput:    { flex:1, background:'var(--bg)', padding:12, overflowY:'auto' },
   serialInput:     { flex:1, background:'var(--card)', border:'1px solid var(--border)', color:'var(--text)', padding:'7px 10px', borderRadius:8, fontFamily:'inherit', fontSize:12, outline:'none' },
